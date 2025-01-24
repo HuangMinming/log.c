@@ -1,0 +1,11 @@
+.PHONY:all
+all: test
+
+test:test.c ./src/log.c
+	gcc -o $@ $^ -g  -lssl  -lcrypto
+
+.PHONY:clean
+clean:
+	rm -fr all:md sign evp_rsa gcm gcm2 ecdsa ecies input_password
+
+	
